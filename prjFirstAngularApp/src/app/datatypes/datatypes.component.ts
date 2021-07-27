@@ -9,7 +9,7 @@ export class DatatypesComponent implements OnInit {
 
   //declaring variable
 
-  name:string="SRI";
+  name:string="Ram";
   age:number;
   hobbies:string[];
   marks:Array<number>;
