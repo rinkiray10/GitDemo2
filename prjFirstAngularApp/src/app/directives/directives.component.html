@@ -1,0 +1,46 @@
+<p>directives works!</p>
+<h1>Structural Directives</h1>
+
+<div class="table table-bordered table-hover">
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let emp of employee,let i=index">
+            <tr>
+                <td>{{i}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.age}}</td>
+                <td>{{emp.dept}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>NGIF</h2>
+    <div *ngIf="let e of employee">
+        <li *ng If="e.age>21 && e.dept=='Admin'">{{e.name}} {{e.age}} {{e.dept}}
+        </li>
+    </div>
+    <hr>
+    <h3>Switch Case</h3>
+    <div *ngFor="let e of employee" [ngSwitch]="e.dept">
+        <li *ngSwitchCase="'Admin'" class="text-success">{{e.namw}}{{e.dept}}</li>
+        <li *ngSwitchCase="'UI'" class="text-danger">{{e.namw}}{{e.dept}}</li>
+        <li *ngSwitchDefault class="text-primary">{{e.namw}}{{e.dept}}</li>
+    </div>
+    <div *ngFor="let c of Cars">
+        <span [ngStyle]="{'color':red}"></span>
+    </div>
+    <hr>
+    <h3>Attribute Directive</h3>
+    <h2>ngClass</h2>
+
+    <ul *ngFor="let e of employee">
+        <li [ngClass]="{ 'text-success':e.dept==='HR' , 'text-danger':e.dept==='Admin' } ">{{e.name}}{{e.dept}}</li>
+    </ul>
+</div>
